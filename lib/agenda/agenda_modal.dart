@@ -1,3 +1,4 @@
+import 'package:ativiti/themes/typography.dart';
 import 'package:flutter/material.dart';
 
 class AgendaItem {
@@ -22,7 +23,7 @@ class AgendaItem {
 
 class AgendaStatus {
   String statusName;
-  Color statusColor;
+  TextStyle style;
   AgendaEnum status;
   AgendaStatus({
     @required this.status,
@@ -30,19 +31,19 @@ class AgendaStatus {
     switch (this.status) {
       case AgendaEnum.BOOKED:
         this.statusName = 'Booked';
-        this.statusColor = Colors.green;
+        this.style = AtivitiTypography.h6LabelGreen;
         break;
       case AgendaEnum.CANCLED:
         this.statusName = 'Cancelled';
-        this.statusColor = Colors.red;
+        this.style = AtivitiTypography.h6LabelRed;
         break;
       case AgendaEnum.DECLINED:
         this.statusName = 'Declined';
-        this.statusColor = Colors.black;
+        this.style = AtivitiTypography.h6LabelBlue;
         break;
       case AgendaEnum.WAIT_LIST:
         this.statusName = 'Wait List';
-        this.statusColor = Colors.yellow;
+        this.style = AtivitiTypography.h6LabelYellow;
         break;
     }
   }

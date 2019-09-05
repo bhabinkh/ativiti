@@ -1,4 +1,5 @@
 import 'package:ativiti/agenda/agenda_modal.dart';
+import 'package:ativiti/themes/colors.dart';
 import 'package:ativiti/themes/typography.dart';
 import 'package:flutter/material.dart';
 
@@ -87,104 +88,137 @@ class _UpcomingAgendasSection extends StatelessWidget {
     return ListView.builder(
       itemCount: agendas.length,
       itemBuilder: (BuildContext context, int i) {
-        return Container(
-          padding: EdgeInsets.only(
-            top: 23,
-            left: 16,
-            bottom: 15,
-            right: 14,
-          ),
-          height: 196,
-          width: MediaQuery.of(context).size.width,
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: <Widget>[
-              Container(
-                child: Row(
+        return new _AgendaCard(
+          agendaItem: agendas[i],
+        );
+      },
+    );
+  }
+}
+
+class _AgendaCard extends StatelessWidget {
+  final AgendaItem agendaItem;
+  _AgendaCard({Key key, @required this.agendaItem}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: EdgeInsets.only(
+        top: 23,
+        left: 16,
+        bottom: 15,
+        right: 14,
+      ),
+      // height: 196,
+      width: MediaQuery.of(context).size.width,
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: <Widget>[
+          Container(
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: <Widget>[
+                    Text(
+                      agendaItem.date,
+                      style: AtivitiTypography.h6LabelBlack,
+                    ),
+                    Text(
+                      agendaItem.startTime,
+                      style: AtivitiTypography.h4TitleMenuBlack,
+                    ),
+                    Text(
+                      agendaItem.endTime,
+                      style: AtivitiTypography.h4TitleMenuBlack,
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  width: 40,
+                ),
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: <Widget>[
-                        Text(
-                          agendas[i].date,
-                          style: AtivitiTypography.h6LabelBlack,
-                        ),
-                        Text(
-                          agendas[i].startTime,
-                          style: TextStyle(fontFamily: 'IBMPlexSans'),
-                        ),
-                        Text(
-                          agendas[i].endTime,
-                          style: AtivitiTypography.h4TitleMenuBlack,
-                        ),
-                      ],
+                    Text(
+                      agendaItem.agendaTitle,
+                      style: AtivitiTypography.h4TitleMenuBlack,
+                    ),
+                    Text(
+                      agendaItem.place,
+                      style: AtivitiTypography.h5TitleGrey,
                     ),
                     SizedBox(
-                      width: 40,
+                      height: 7,
                     ),
-                    Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.start,
+                    Row(
                       children: <Widget>[
-                        Text(agendas[i].agendaTitle),
-                        Text(agendas[i].place),
+                        Icon(
+                          Icons.location_on,
+                        ),
                         SizedBox(
-                          height: 7,
+                          width: 9.8,
                         ),
-                        Row(
-                          children: <Widget>[
-                            Icon(Icons.location_on),
-                            SizedBox(
-                              width: 9.8,
-                            ),
-                            Text(agendas[i].location),
-                          ],
-                        ),
-                        Row(
-                          children: <Widget>[
-                            Icon(Icons.star),
-                            SizedBox(
-                              width: 9.8,
-                            ),
-                            Text(agendas[i].rating),
-                          ],
+                        Text(
+                          agendaItem.location,
+                          style: AtivitiTypography.h6LabelBlack,
                         ),
                       ],
                     ),
-                    Expanded(
-                      child: Container(),
-                    ),
-                    Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    Row(
                       children: <Widget>[
-                        Icon(Icons.filter_vintage),
-                        Row(
-                          children: <Widget>[
-                            if (agendas[i].status.status ==
-                                AgendaEnum.BOOKED) ...[
-                              Icon(
-                                Icons.check,
-                                color: Colors.green,
-                              ),
-                              SizedBox(
-                                width: 4.5,
-                              ),
-                            ],
-                            Text(agendas[i].status.statusName)
-                          ],
+                        Icon(
+                          Icons.star,
+                          color: Colors.red,
+                        ),
+                        SizedBox(
+                          width: 9.8,
+                        ),
+                        Text(
+                          agendaItem.rating,
+                          style: AtivitiTypography.h6LabelBlack,
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+                Expanded(
+                  child: Container(),
+                ),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  mainAxisSize: MainAxisSize.max,
+                  children: <Widget>[
+                    Icon(Icons.filter_vintage),
+                    Row(
+                      children: <Widget>[
+                        if (agendaItem.status.status == AgendaEnum.BOOKED) ...[
+                          Icon(
+                            Icons.check,
+                            color: agendaItem.status.style.color,
+                          ),
+                          SizedBox(
+                            width: 4.5,
+                          ),
+                        ],
+                        Text(
+                          agendaItem.status.statusName,
+                          style: agendaItem.status.style,
                         )
                       ],
                     )
                   ],
-                ),
-              )
-            ],
-          ),
-        );
-      },
+                )
+              ],
+            ),
+          )
+        ],
+      ),
     );
   }
 }
