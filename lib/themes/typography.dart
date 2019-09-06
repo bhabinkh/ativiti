@@ -20,7 +20,7 @@ class AtivitiTypography {
   static TextStyle mobileTitleWhite = TextStyle(
     fontFamily: 'IBMPlexSans',
     fontSize: 26,
-    fontWeight: FontWeight.w500,
+    fontWeight: FontWeight.w600,
     letterSpacing: 0.12,
     color: AtivitiColors.black,
   );
@@ -131,7 +131,7 @@ class AtivitiTypography {
 
   static TextStyle mobileBoldWhite =
       AtivitiTypography.mobileGreyRegularCenter.copyWith(
-    fontWeight: FontWeight.w500,
+    fontWeight: FontWeight.w600,
     color: AtivitiColors.white,
   );
 
@@ -152,7 +152,7 @@ class AtivitiTypography {
   static TextStyle h4TitleMenuGreyWhen = TextStyle(
     fontFamily: 'IBMPlexSans',
     fontSize: 14,
-    fontWeight: FontWeight.w500,
+    fontWeight: FontWeight.w600,
     letterSpacing: 0.16,
     color: AtivitiColors.brownGrey,
   );
@@ -160,7 +160,7 @@ class AtivitiTypography {
   static TextStyle h5TitleBold = TextStyle(
     fontFamily: 'IBMPlexSans',
     fontSize: 14,
-    fontWeight: FontWeight.w500,
+    fontWeight: FontWeight.w600,
     letterSpacing: 0.09,
     color: AtivitiColors.black,
   );
@@ -175,7 +175,7 @@ class AtivitiTypography {
   static TextStyle regularTextDarkMedium = TextStyle(
     fontFamily: 'Rubik',
     fontSize: 14,
-    fontWeight: FontWeight.w500,
+    fontWeight: FontWeight.w600,
     letterSpacing: 0.09,
     color: Color(0xff252631),
   );

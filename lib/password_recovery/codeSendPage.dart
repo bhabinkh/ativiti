@@ -2,6 +2,7 @@ import 'package:ativiti/themes/ativiti_icons_icons.dart';
 import 'package:ativiti/themes/colors.dart';
 import 'package:ativiti/themes/typography.dart';
 import 'package:flutter/material.dart';
+import 'package:ativiti/password_recovery/codeVerificationPage.dart';
 
 class PasswordRecoveryPage extends StatelessWidget {
   PasswordRecoveryPage({Key key}) : super(key: key);
