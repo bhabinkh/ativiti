@@ -24,8 +24,8 @@ class BoxAttendes extends StatelessWidget {
           )
         ],
       ),
-      width: 157,
-      height: 100,
+      // width: 157,
+      // height: 100,
       child: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,

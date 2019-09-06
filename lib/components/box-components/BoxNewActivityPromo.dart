@@ -30,7 +30,7 @@ class BoxNewActivityPromo extends StatelessWidget {
         ],
         color: AtivitiColors.white,
       ),
-      width: 320,
+      // width: 320,
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: <Widget>[

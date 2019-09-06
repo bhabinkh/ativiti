@@ -30,8 +30,8 @@ class BoxCategory extends StatelessWidget {
             )
           ],
         ),
-        height: 128,
-        width: 128,
+        // height: 128,
+        // width: 128,
         child: Stack(
           children: <Widget>[
             // TODO add asset here

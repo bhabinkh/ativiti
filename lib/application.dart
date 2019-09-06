@@ -1,6 +1,8 @@
+import 'package:ativiti/components/box-components/BlocActivity.dart';
 import 'package:flutter/material.dart';
 
-import 'components/box-components/BoxActivityWeb.dart';
+import 'components/box-components/boxActivity.dart';
+import 'components/box-components/mapBox.dart';
 
 class Application extends StatelessWidget {
   @override
@@ -10,16 +12,14 @@ class Application extends StatelessWidget {
       home: Scaffold(
         body: Padding(
           padding: const EdgeInsets.all(8.0),
-          child: BoxActivityWeb(
-            activity: 'Bowling',
-            asset: '',
-            location: '1003, Lausanne',
-            rating: 4.8,
-            place: 'Bowland Lausanne-Flon',
-            date: '23 mars 2019',
-            timeFrom: '12h00',
-            hasOpenClose: true,
-            timeTo: '12h30',
+          child: BoxActivity(
+            activity: "activity",
+            asset: "",
+            boxType: BoxType.HALF,
+            location: "locatgio",
+            place: "place",
+            rating: 1.3,
+            description: "lorem",
           ),
         ),
       ),

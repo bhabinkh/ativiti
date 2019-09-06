@@ -39,9 +39,9 @@ class BoxActivity extends StatelessWidget {
           )
         ],
       ),
-      width: this.boxType == BoxType.FULL
-          ? 320
-          : (this.boxType == BoxType.HALF ? 147 : 194),
+      // width: this.boxType == BoxType.FULL
+      //     ? 320
+      //     : (this.boxType == BoxType.HALF ? 147 : 194),
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: <Widget>[

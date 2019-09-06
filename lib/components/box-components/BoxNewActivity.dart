@@ -41,7 +41,7 @@ class BoxNewActivity extends StatelessWidget {
           )
         ],
       ),
-      width: 320,
+      // width: 320,
       child: Padding(
         padding: const EdgeInsets.all(2.0),
         child: Column(

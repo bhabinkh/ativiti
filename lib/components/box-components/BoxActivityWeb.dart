@@ -40,7 +40,7 @@ class BoxActivityWeb extends StatelessWidget {
           )
         ],
       ),
-      width: 188,
+      // width: 188,
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: <Widget>[
