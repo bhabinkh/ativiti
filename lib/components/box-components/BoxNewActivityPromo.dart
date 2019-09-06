@@ -82,7 +82,7 @@ class BoxNewActivityPromo extends StatelessWidget {
                   ),
                 ),
                 SizedBox(
-                  height: 17,
+                  height: 7,
                 ),
                 Padding(
                   padding: const EdgeInsets.only(bottom: 11.0),
