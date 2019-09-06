@@ -265,6 +265,7 @@ class AtivitiTypography {
   );
   static TextStyle h6LabelGrey = AtivitiTypography.h6LabelWhite.copyWith(
     color: AtivitiColors.brownGrey,
+    fontWeight: FontWeight.bold,
     height: 1.58,
   );
   static TextStyle h6Location = AtivitiTypography.h6LabelGrey.copyWith(
