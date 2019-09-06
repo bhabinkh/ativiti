@@ -173,7 +173,7 @@ class _AgendaCard extends StatelessWidget {
                             height: 7,
                           ),
                           SizedBox(
-                            height: 10,
+                            height: 5,
                           ),
                           Row(
                             children: <Widget>[
@@ -214,7 +214,7 @@ class _AgendaCard extends StatelessWidget {
                     ],
                   ),
                   SizedBox(
-                    height: 24,
+                    height: 16,
                   ),
                   Container(
                     child: Row(
@@ -257,7 +257,7 @@ class _AgendaCard extends StatelessWidget {
           Flexible(
             flex: 7,
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              mainAxisAlignment: MainAxisAlignment.end,
               crossAxisAlignment: CrossAxisAlignment.end,
               children: <Widget>[
                 GestureDetector(
@@ -268,7 +268,7 @@ class _AgendaCard extends StatelessWidget {
                   onTap: () {},
                 ),
                 SizedBox(
-                  height: 40,
+                  height: 60,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.end,
@@ -285,9 +285,26 @@ class _AgendaCard extends StatelessWidget {
                     Text(
                       agendaItem.status.statusName,
                       style: agendaItem.status.style,
-                    )
+                    ),
                   ],
-                )
+                ),
+                SizedBox(
+                  height: 12,
+                ),
+                if (agendaItem.status.status == AgendaEnum.BOOKED)
+                  Container(
+                    width: 45,
+                    height: 45,
+                    decoration: BoxDecoration(
+                      color: Color(0xff28aa08),
+                      shape: BoxShape.circle,
+                    ),
+                    child: Icon(
+                      AtivitiIcons.getDirection,
+                      color: AtivitiColors.white,
+                      size: 18,
+                    ),
+                  )
               ],
             ),
           )
