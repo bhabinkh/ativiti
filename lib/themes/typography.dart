@@ -21,7 +21,7 @@ class AtivitiTypography {
   static TextStyle mobileTitleWhite = TextStyle(
     fontFamily: 'IBMPlexSans',
     fontSize: 26,
-    fontWeight: FontWeight.w500,
+    fontWeight: FontWeight.w600,
     letterSpacing: 0.12,
     height: 1.92,
     color: AtivitiColors.black,
@@ -30,7 +30,7 @@ class AtivitiTypography {
   static TextStyle h3CenterTitleBlack = TextStyle(
     fontFamily: 'IBMPlexSans',
     fontSize: 20,
-    fontWeight: FontWeight.w500,
+    fontWeight: FontWeight.w600,
     height: 2.5,
     letterSpacing: .09,
     color: AtivitiColors.black,
@@ -92,7 +92,7 @@ class AtivitiTypography {
   static TextStyle h4TitleMenuBlack = TextStyle(
     fontFamily: 'IBMPlexSans',
     fontSize: 16,
-    fontWeight: FontWeight.w500,
+    fontWeight: FontWeight.w600,
     height: 1.25,
     letterSpacing: .18,
     color: AtivitiColors.black,
@@ -126,7 +126,7 @@ class AtivitiTypography {
 
   static TextStyle mobileBoldWhite =
       AtivitiTypography.mobileGreyRegularCenter.copyWith(
-    fontWeight: FontWeight.w500,
+    fontWeight: FontWeight.w600,
     color: AtivitiColors.white,
   );
 
@@ -148,7 +148,7 @@ class AtivitiTypography {
   static TextStyle h4TitleMenuGreyWhen = TextStyle(
     fontFamily: 'IBMPlexSans',
     fontSize: 14,
-    fontWeight: FontWeight.w500,
+    fontWeight: FontWeight.w600,
     letterSpacing: 0.16,
     height: 1.43,
     color: AtivitiColors.brownGrey,
@@ -157,7 +157,7 @@ class AtivitiTypography {
   static TextStyle h5TitleBold = TextStyle(
     fontFamily: 'IBMPlexSans',
     fontSize: 14,
-    fontWeight: FontWeight.w500,
+    fontWeight: FontWeight.w600,
     letterSpacing: 0.09,
     height: 1.93,
     color: AtivitiColors.black,
@@ -175,7 +175,7 @@ class AtivitiTypography {
   static TextStyle regularTextDarkMedium = TextStyle(
     fontFamily: 'Rubik',
     fontSize: 14,
-    fontWeight: FontWeight.w500,
+    fontWeight: FontWeight.w600,
     letterSpacing: 0.09,
     height: 1.5,
     color: Color(0xff252631),
@@ -244,14 +244,14 @@ class AtivitiTypography {
   static TextStyle sFProTextMedium8 = TextStyle(
     fontFamily: 'SFProText',
     fontSize: 8,
-    fontWeight: FontWeight.w500,
+    fontWeight: FontWeight.w600,
     height: .15,
     color: Color(0xff989898),
   );
   static TextStyle h6LabelWhite = TextStyle(
     fontFamily: 'IBMPlexSans',
     fontSize: 12,
-    fontWeight: FontWeight.w500,
+    fontWeight: FontWeight.w600,
     height: 1.33,
     color: AtivitiColors.white,
     letterSpacing: .08,

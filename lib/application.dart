@@ -1,4 +1,4 @@
-import 'package:ativiti/components/box-components/boxActivityHalf.dart';
+import 'package:ativiti/components/box-components/BoxNewActivityPromo.dart';
 import 'package:flutter/material.dart';
 
 class Application extends StatelessWidget {
@@ -9,15 +9,12 @@ class Application extends StatelessWidget {
       home: Scaffold(
         body: Padding(
           padding: const EdgeInsets.all(8.0),
-          child: BoxActivity(
-            boxType: BoxType.FULL,
-            asset: "",
-            activity: 'Bowling',
-            location: '1003, Lausanne',
-            place: 'Bowland Lausanne-Flon',
+          child: BoxNewActivityPromo(
             description:
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut mollis iaculis diam. Lorem ipsum dolor sit amet …",
-            rating: 4.8,
+                'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut mollis iaculis diam. Lorem ipsum dolor sit amet …',
+            imageUrl: "",
+            promotionName: 'Summer Pormotion',
+            subsciptionCharge: 40,
           ),
         ),
       ),
