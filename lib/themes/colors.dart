@@ -9,8 +9,9 @@ class AtivitiColors {
   static Color lightPeriwinkle = Color(0xffd3e0f2);
   static Color brownGrey = Color(0xff9b9b9b);
   static Color tangerine = Color(0xffff9902);
-  static Color white = Color(0xfff8f8f8);
-  static Color pureWhite = Color(0xffffff);
+  static Color offWhite = Color(0xfff8f8f8);
+  static Color white = Colors.white;
   static Color scarlet = Color(0xffd0021b);
   static Color veryLightPink = Color(0xfff3f3f3);
+  static Color tempColor = Color(0xff223432);
 }

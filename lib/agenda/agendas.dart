@@ -1,5 +1,4 @@
 import 'package:ativiti/agenda/agenda_modal.dart';
-import 'package:ativiti/themes/colors.dart';
 import 'package:ativiti/themes/typography.dart';
 import 'package:flutter/material.dart';
 

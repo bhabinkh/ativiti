@@ -11,7 +11,7 @@ class AtivitiTypography {
     color: AtivitiColors.black,
   );
   static TextStyle h1TitleWhite =
-      AtivitiTypography.h1TitleBlack.copyWith(color: AtivitiColors.pureWhite);
+      AtivitiTypography.h1TitleBlack.copyWith(color: AtivitiColors.white);
   static TextStyle mobileTitleWhite = TextStyle(
     fontFamily: 'IBMPlexSans',
     fontSize: 26,
@@ -35,7 +35,7 @@ class AtivitiTypography {
   );
   static TextStyle h3CenterTitleWhite =
       AtivitiTypography.h3CenterTitleBlack.copyWith(
-    color: AtivitiColors.pureWhite,
+    color: AtivitiColors.white,
     height: 2.5,
   );
   static TextStyle h3TitleBlack = AtivitiTypography.h3CenterTitleWhite.copyWith(
@@ -57,7 +57,7 @@ class AtivitiTypography {
   );
   static TextStyle paragraphContentWhite =
       AtivitiTypography.paragraphContentGrey.copyWith(
-    color: AtivitiColors.pureWhite,
+    color: AtivitiColors.white,
   );
   static TextStyle icons18pxBlack = TextStyle(
     fontFamily: 'LineAwesome',
@@ -85,7 +85,7 @@ class AtivitiTypography {
   );
   static TextStyle h4TitleMenuWhite =
       AtivitiTypography.h4TitleMenuBlack.copyWith(
-    color: AtivitiColors.pureWhite,
+    color: AtivitiColors.white,
   );
   static TextStyle mobileRegularBlack = TextStyle(
     fontFamily: 'IBMPlexSans',
@@ -104,7 +104,7 @@ class AtivitiTypography {
   static TextStyle mobileBoldWhite =
       AtivitiTypography.mobileGreyRegularCenter.copyWith(
     fontWeight: FontWeight.w500,
-    color: AtivitiColors.pureWhite,
+    color: AtivitiColors.white,
   );
   static TextStyle headingSh5BlackCenter = TextStyle(
       fontFamily: 'Rubik',
@@ -136,7 +136,7 @@ class AtivitiTypography {
     color: AtivitiColors.black,
   );
   static TextStyle h5TitleWhiteBold = AtivitiTypography.h5TitleBold.copyWith(
-    color: AtivitiColors.pureWhite,
+    color: AtivitiColors.white,
   );
   static TextStyle h5TitleBoldWhite =
       AtivitiTypography.h5TitleWhiteBold.copyWith(
@@ -159,7 +159,7 @@ class AtivitiTypography {
   );
   static TextStyle fieldNormalWhite =
       AtivitiTypography.fieldNormalBlack.copyWith(
-    color: AtivitiColors.pureWhite,
+    color: AtivitiColors.white,
   );
   static TextStyle h5Title = TextStyle(
     fontFamily: 'IBMPlexSans',
@@ -176,7 +176,7 @@ class AtivitiTypography {
     height: 1,
   );
   static TextStyle h5TitleWhite2 = AtivitiTypography.h5Title.copyWith(
-    color: AtivitiColors.pureWhite,
+    color: AtivitiColors.white,
   );
   static TextStyle paragraphContentBlackLeft =
       AtivitiTypography.h5Title.copyWith(
@@ -193,7 +193,7 @@ class AtivitiTypography {
   );
   static TextStyle tagWhiteText2 = AtivitiTypography.h5TitleWhite2.copyWith(
     height: 1.36,
-    color: AtivitiColors.pureWhite,
+    color: AtivitiColors.white,
   );
   static TextStyle textNone2 = AtivitiTypography.textNone.copyWith(
     height: 1.71,
@@ -217,7 +217,7 @@ class AtivitiTypography {
     fontSize: 12,
     fontWeight: FontWeight.w500,
     height: 1.33,
-    color: AtivitiColors.pureWhite,
+    color: AtivitiColors.white,
     letterSpacing: .08,
   );
   static TextStyle h6LabelBlack = AtivitiTypography.h6LabelWhite.copyWith(
@@ -236,7 +236,7 @@ class AtivitiTypography {
     fontStyle: FontStyle.italic,
   );
   static TextStyle tagWhiteText = AtivitiTypography.h6LabelGrey.copyWith(
-    color: AtivitiColors.pureWhite,
+    color: AtivitiColors.white,
   );
   static TextStyle infoRed = TextStyle(
     fontFamily: 'IBMPlexSans',
@@ -281,7 +281,7 @@ class AtivitiTypography {
     letterSpacing: .07,
   );
   static TextStyle tagSmallTextWhite = AtivitiTypography.tagSmallText.copyWith(
-    color: AtivitiColors.pureWhite,
+    color: AtivitiColors.white,
   );
   // static TextStyle h6LabelGrey= AtivitiTypography.h6LabelBlue.copyWith(
   //   color: AtivitiColors.brownGrey,
