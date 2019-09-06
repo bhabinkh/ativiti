@@ -28,11 +28,12 @@ class _AgendasPageState extends State<AgendasPage>
       body: Column(
         children: <Widget>[
           Container(
+            color: AtivitiColors.black,
             child: TabBar(
               controller: _tabController,
-              indicatorColor: Colors.red,
-              labelColor: Colors.black,
-              unselectedLabelColor: Colors.grey,
+              indicatorColor: AtivitiColors.coralPink,
+              labelColor: AtivitiColors.white,
+              unselectedLabelColor: AtivitiColors.brownGrey,
               tabs: _AgendaList.agendaHeaders.map((header) {
                 return Container(
                   height: 67,
@@ -66,14 +67,17 @@ class _PreviousAgendasSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
+    return ListView.separated(
       itemCount: agendas.length,
       itemBuilder: (BuildContext context, int i) {
+        return _AgendaHistoryCard(
+          agendaItem: agendas[i],
+        );
+      },
+      separatorBuilder: (BuildContext context, int index) {
         return Container(
-          child: Text(
-            agendas[i].agendaTitle,
-            style: TextStyle(color: Colors.black),
-          ),
+          height: 1,
+          color: Color(0xff979797).withOpacity(.2),
         );
       },
     );
@@ -117,7 +121,6 @@ class _AgendaCard extends StatelessWidget {
         bottom: 15,
         right: 14,
       ),
-      // height: 196,
       width: MediaQuery.of(context).size.width,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -305,6 +308,142 @@ class _AgendaCard extends StatelessWidget {
                       size: 18,
                     ),
                   )
+              ],
+            ),
+          )
+        ],
+      ),
+    );
+  }
+}
+
+class _AgendaHistoryCard extends StatelessWidget {
+  final AgendaItem agendaItem;
+  _AgendaHistoryCard({Key key, @required this.agendaItem}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: EdgeInsets.only(
+        top: 23,
+        left: 16,
+        bottom: 15,
+        right: 14,
+      ),
+      width: MediaQuery.of(context).size.width,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          Flexible(
+            flex: 10,
+            child: Container(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: <Widget>[
+                          Text(
+                            agendaItem.date,
+                            style: AtivitiTypography.h6LabelBlack,
+                          ),
+                          SizedBox(
+                            height: 5,
+                          ),
+                          Text(
+                            agendaItem.startTime,
+                            style: AtivitiTypography.h4TitleMenuBlack,
+                          ),
+                          SizedBox(
+                            height: 5,
+                          ),
+                          Text(
+                            agendaItem.endTime,
+                            style: AtivitiTypography.h4TitleMenuBlack,
+                          ),
+                        ],
+                      ),
+                      SizedBox(
+                        width: 40,
+                      ),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: <Widget>[
+                          Text(
+                            agendaItem.agendaTitle,
+                            style: AtivitiTypography.h4TitleMenuBlack,
+                          ),
+                          Text(
+                            agendaItem.place,
+                            style: AtivitiTypography.h5TitleGrey,
+                          ),
+                          SizedBox(
+                            height: 7,
+                          ),
+                          SizedBox(
+                            height: 5,
+                          ),
+                          Row(
+                            children: <Widget>[
+                              Icon(
+                                AtivitiIcons.location1,
+                                size: 13,
+                              ),
+                              SizedBox(
+                                width: 9.8,
+                              ),
+                              Text(
+                                agendaItem.location,
+                                style: AtivitiTypography.h6LabelBlack,
+                              ),
+                            ],
+                          ),
+                        ],
+                      )
+                    ],
+                  ),
+                  SizedBox(
+                    height: 16,
+                  ),
+                  Container(
+                    child: Row(
+                      mainAxisSize: MainAxisSize.max,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: <Widget>[
+                        Container(
+                          width: MediaQuery.of(context).size.width - 190,
+                          child: ButtonComponent.secondaryOutlineButton(
+                              child: Text('Remove card'), onPressed: () {}),
+                        ),
+                      ],
+                    ),
+                  )
+                ],
+              ),
+            ),
+          ),
+          Flexible(
+            flex: 7,
+            child: Column(
+              children: <Widget>[
+                GestureDetector(
+                  child: Icon(
+                    AtivitiIcons.heart,
+                    size: 13,
+                  ),
+                  onTap: () {},
+                ),
+                SizedBox(
+                  height: 73,
+                ),
+                Text(
+                  'Completed',
+                  style: AtivitiTypography.h6LabelBlue,
+                ),
               ],
             ),
           )
