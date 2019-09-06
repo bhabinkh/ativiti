@@ -1,4 +1,5 @@
 import 'package:ativiti/onboarding/onboarding_page.dart';
+import 'package:ativiti/password_recovery/password_recovery_page.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -11,7 +12,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: OnBoardingPage(),
+      home: PasswordRecoveryPage(),
     );
   }
 }
