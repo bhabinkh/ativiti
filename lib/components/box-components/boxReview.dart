@@ -1,3 +1,4 @@
+import 'package:ativiti/themes/ativiti_icons_icons.dart';
 import 'package:ativiti/themes/colors.dart';
 import 'package:ativiti/themes/typography.dart';
 import 'package:flutter/material.dart';
@@ -51,9 +52,11 @@ class BoxReview extends StatelessWidget {
               Row(
                 // TODO check the rating value to render the star
                 children: <Widget>[
-                  // for (int i = 0; i < ratingValue.round(); i++) {
-                  //   Icon(At)
-                  // }
+                  for (int i = 0; i < ratingValue.round(); i++)
+                    Icon(
+                      AtivitiIcons.star,
+                      color: AtivitiColors.scarlet,
+                    )
                 ],
               )
             ],

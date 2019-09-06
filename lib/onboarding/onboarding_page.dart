@@ -14,30 +14,26 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
     super.initState();
   }
 
-  Widget _loginButton;
-  Widget _signUpButton;
+  Widget _loginButton = Container(child: Text('Login'));
+  Widget _signUpButton = Container(child: Text('SignUp'));
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: <Widget>[
-          _localeMenu(),
-          GestureDetector(),
-          _OnBoardingPageItem(OnBoardingPageItemModel.getOnBoardingList()[0]),
-          _dots(),
-          Row(
-            children: <Widget>[
-              _loginButton,
-              _signUpButton,
-            ],
-          ),
-        ],
+      body: SafeArea(
+        child: Column(
+          children: <Widget>[
+            _localeMenu(),
+            _OnBoardingPageItem(OnBoardingPageItemModel.getOnBoardingList()[0])
+          ],
+        ),
       ),
     );
   }
 
-  Widget _localeMenu() {}
+  Widget _localeMenu() {
+    return Container(child: Text('Locale English'));
+  }
 
   Widget _dots() {
     return Row(
