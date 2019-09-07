@@ -45,7 +45,6 @@ class _BottomBarState extends State<BottomBar> {
           backgroundColor: AtivitiColors.white,
           currentIndex: _currentIndex,
           onTap: (index) {
-            print(index);
             setState(() {
               _currentIndex = index;
             });
