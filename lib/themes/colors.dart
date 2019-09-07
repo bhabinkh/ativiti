@@ -10,7 +10,7 @@ class AtivitiColors {
   static const Color brownGrey = Color(0xff9b9b9b);
   static const Color tangerine = Color(0xffff9902);
   static const Color white = Color(0xfff8f8f8);
-  static const Color pureWhite = Color(0xffffffff);
+  static const Color offWhite = Color(0xffffffff);
   static const Color scarlet = Color(0xffd0021b);
   static const Color veryLightPink = Color(0xfff3f3f3);
   static const Color tempColor = Color(0xff167382);
