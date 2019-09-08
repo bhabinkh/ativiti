@@ -9,17 +9,15 @@ class Application extends StatelessWidget {
     return Scaffold(
       bottomNavigationBar: BottomBar(),
       body: Padding(
-        padding: const EdgeInsets.all(0.0),
-        child: BoxActivityWeb(
-          activity: 'Bowling',
-          hasOpenClose: false,
-          timeFrom: '12h00',
-          timeTo: '12h30',
-          asset: "",
-          date: '1st session Feb 24, 2019',
-          location: '27 rue de la mousse, 1003, Lausanne',
-          place: 'Bowland Lausanne-Flon',
-          // onCheckoutCallback: ()_,
+        padding: const EdgeInsets.all(60.0),
+        child: MapBox(
+          bookingType: BookingType.DIRECT_BOOKING,
+          endTime: '12:45',
+          location: '1003, Lausanne',
+          place: 'Fit center',
+          hasOpensAtClosesAt: true,
+          startTime: '12:00',
+          title: "Cardio Sculpt",
         ),
       ),
     );

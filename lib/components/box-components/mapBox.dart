@@ -9,18 +9,21 @@ class MapBox extends StatelessWidget {
   final String title;
   final String place;
   final String location;
-  final double rating;
+  final bool hasOpensAtClosesAt;
+  // final double rating;
   final BookingType bookingType;
-  const MapBox({
-    Key key,
-    @required this.startTime,
-    @required this.endTime,
-    @required this.title,
-    @required this.place,
-    @required this.bookingType,
-    @required this.location,
-    @required this.rating,
-  }) : super(key: key);
+  const MapBox(
+      {Key key,
+      @required this.startTime,
+      @required this.endTime,
+      @required this.title,
+      @required this.place,
+      @required this.bookingType,
+      @required this.location,
+      @required this.hasOpensAtClosesAt
+      // @required this.rating,
+      })
+      : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -29,28 +32,76 @@ class MapBox extends StatelessWidget {
         color: AtivitiColors.white,
         boxShadow: [
           BoxShadow(
-            color: AtivitiColors.brownGrey.withOpacity(0.2),
-            spreadRadius: 2,
-            blurRadius: 1,
+            color: AtivitiColors.brownGrey.withOpacity(0.16),
+            spreadRadius: 0,
+            blurRadius: 14,
+            offset: Offset(0, 2),
           )
         ],
       ),
-      padding: EdgeInsets.symmetric(horizontal: 15, vertical: 25),
+      padding: EdgeInsets.symmetric(horizontal: 15, vertical: 12),
       child: Row(
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
+          if (hasOpensAtClosesAt) ...[
+            Column(
+              mainAxisSize: MainAxisSize.min,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                SizedBox(
+                  height: 6,
+                ),
+                Container(
+                  height: 8,
+                  width: 8,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: AtivitiColors.lightPeriwinkle,
+                  ),
+                ),
+                Container(
+                  width: 3,
+                  height: 40,
+                  color: AtivitiColors.lightPeriwinkle,
+                ),
+                Container(
+                  height: 8,
+                  width: 8,
+                  decoration: BoxDecoration(
+                    color: AtivitiColors.lightPeriwinkle,
+                    shape: BoxShape.circle,
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(
+              width: 10,
+            ),
+          ],
           Column(
             mainAxisSize: MainAxisSize.min,
             mainAxisAlignment: MainAxisAlignment.start,
             children: <Widget>[
+              if (hasOpensAtClosesAt)
+                Text(
+                  'Open at',
+                  style: AtivitiTypography.h6LabelBlack.copyWith(height: 1.33),
+                ),
               Text(
                 startTime,
-                style: AtivitiTypography.h4TitleMenuBlack,
+                style:
+                    AtivitiTypography.h4TitleMenuBlack.copyWith(height: 1.25),
               ),
+              if (hasOpensAtClosesAt)
+                Text(
+                  'Close at',
+                  style: AtivitiTypography.h6LabelBlack.copyWith(height: 1.33),
+                ),
               Text(
                 endTime,
-                style: AtivitiTypography.h4TitleMenuBlack,
+                style:
+                    AtivitiTypography.h4TitleMenuBlack.copyWith(height: 1.25),
               ),
             ],
           ),
@@ -64,11 +115,12 @@ class MapBox extends StatelessWidget {
             children: <Widget>[
               Text(
                 title,
-                style: AtivitiTypography.h4TitleMenuBlack,
+                style:
+                    AtivitiTypography.h4TitleMenuBlack.copyWith(height: 1.25),
               ),
               Text(
                 place,
-                style: AtivitiTypography.h5Title,
+                style: AtivitiTypography.h5Title.copyWith(height: 1.3),
               ),
               Row(
                 children: <Widget>[
@@ -81,26 +133,30 @@ class MapBox extends StatelessWidget {
                   ),
                   Text(
                     location,
-                    style: AtivitiTypography.h6LabelBlack,
+                    style:
+                        AtivitiTypography.h6LabelBlack.copyWith(height: 1.58),
                   ),
                 ],
               ),
-              Row(
-                children: <Widget>[
-                  Icon(
-                    AtivitiIcons.star,
-                    color: AtivitiColors.coralPink,
-                    size: 13,
-                  ),
-                  SizedBox(
-                    width: 4,
-                  ),
-                  Text(
-                    rating.toString(),
-                    style: AtivitiTypography.h6LabelBlack,
-                  ),
-                ],
+              SizedBox(
+                height: 7,
               ),
+              // Row(
+              //   children: <Widget>[
+              //     Icon(
+              //       AtivitiIcons.star,
+              //       color: AtivitiColors.coralPink,
+              //       size: 13,
+              //     ),
+              //     SizedBox(
+              //       width: 4,
+              //     ),
+              //     Text(
+              //       rating.toString(),
+              //       style: AtivitiTypography.h6LabelBlack,
+              //     ),
+              //   ],
+              // ),
             ],
           ),
           Spacer(),
@@ -111,7 +167,7 @@ class MapBox extends StatelessWidget {
                 Text(
                   'Direct\nbooking',
                   style: AtivitiTypography.h6LabelBlue.copyWith(
-                    height: 1.9,
+                    height: 1.5,
                     color: AtivitiColors.dusk,
                   ),
                   textAlign: TextAlign.right,
@@ -120,7 +176,7 @@ class MapBox extends StatelessWidget {
                 Text(
                   'Booking\nrequest',
                   style: AtivitiTypography.h6LabelBlue.copyWith(
-                    height: 1.9,
+                    height: 1.5,
                     color: AtivitiColors.dusk,
                   ),
                   textAlign: TextAlign.right,
@@ -128,11 +184,18 @@ class MapBox extends StatelessWidget {
               if (this.bookingType == BookingType.BOOKED)
                 Row(
                   children: <Widget>[
-                    // TODO ADD CHECK ICON HERE
+                    Icon(
+                      Icons.check,
+                      size: 11,
+                      color: Color(0xff28aa08),
+                    ),
+                    SizedBox(
+                      width: 4,
+                    ),
                     Text(
                       'Booked',
                       style: AtivitiTypography.h6LabelBlue.copyWith(
-                        height: 1.9,
+                        height: 1.5,
                         color: Color(0xff28aa08),
                       ),
                       textAlign: TextAlign.right,
@@ -143,7 +206,7 @@ class MapBox extends StatelessWidget {
                 Text(
                   'Waiting\nlist',
                   style: AtivitiTypography.h6LabelBlue.copyWith(
-                    height: 1.9,
+                    height: 1.5,
                     color: AtivitiColors.tangerine,
                   ),
                   textAlign: TextAlign.right,
