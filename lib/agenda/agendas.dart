@@ -1,5 +1,6 @@
 import 'package:ativiti/agenda/agenda_modal.dart';
 import 'package:ativiti/components/button-components/buttonComponent.dart';
+import 'package:ativiti/components/empty_message_page.dart';
 import 'package:ativiti/themes/ativiti_icons_icons.dart';
 import 'package:ativiti/themes/colors.dart';
 import 'package:ativiti/themes/typography.dart';
@@ -32,7 +33,7 @@ class _AgendasPageState extends State<AgendasPage>
             child: TabBar(
               controller: _tabController,
               indicatorColor: AtivitiColors.coralPink,
-              labelColor: AtivitiColors.white,
+              labelColor: AtivitiColors.offWhite,
               unselectedLabelColor: AtivitiColors.brownGrey,
               tabs: _AgendaList.agendaHeaders.map((header) {
                 return Container(
@@ -67,20 +68,29 @@ class _PreviousAgendasSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView.separated(
-      itemCount: agendas.length,
-      itemBuilder: (BuildContext context, int i) {
-        return _AgendaHistoryCard(
-          agendaItem: agendas[i],
-        );
-      },
-      separatorBuilder: (BuildContext context, int index) {
-        return Container(
-          height: 1,
-          color: Color(0xff979797).withOpacity(.2),
-        );
-      },
-    );
+    if (agendas.length > 0) {
+      return ListView.separated(
+        itemCount: agendas.length,
+        itemBuilder: (BuildContext context, int i) {
+          return _AgendaHistoryCard(
+            agendaItem: agendas[i],
+          );
+        },
+        separatorBuilder: (BuildContext context, int index) {
+          return Container(
+            height: 1,
+            color: Color(0xff979797).withOpacity(.2),
+          );
+        },
+      );
+    } else {
+      return EmptyMessagePage(
+        mainMessage: 'Lookine for something to book ?',
+        subMessage: 'Let’s explore activities you can have crush for',
+        buttonLabel: 'Explore',
+        onButtonPressedCallback: () {},
+      );
+    }
   }
 }
 
@@ -91,20 +101,31 @@ class _UpcomingAgendasSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView.separated(
-      itemCount: agendas.length,
-      itemBuilder: (BuildContext context, int i) {
-        return new _AgendaCard(
-          agendaItem: agendas[i],
-        );
-      },
-      separatorBuilder: (BuildContext context, int index) {
-        return Container(
-          height: 1,
-          color: Color(0xff979797).withOpacity(.2),
-        );
-      },
-    );
+    if (agendas.length > 0) {
+      return ListView.separated(
+        itemCount: agendas.length,
+        itemBuilder: (BuildContext context, int i) {
+          return new _AgendaCard(
+            agendaItem: agendas[i],
+          );
+        },
+        separatorBuilder: (BuildContext context, int index) {
+          return Container(
+            height: 1,
+            color: Color(0xff979797).withOpacity(.2),
+          );
+        },
+      );
+    } else {
+      return EmptyMessagePage(
+        buttonLabel: 'Explore',
+        mainMessage: 'A schedule screen for what’s most important',
+        subMessage:
+            'And what’s more important than your wellness? Use this screen for easy access to your upcoming activities',
+        onButtonPressedCallback: () {
+        },
+      );
+    }
   }
 }
 
@@ -238,7 +259,7 @@ class _AgendaCard extends StatelessWidget {
                         ],
                         if (agendaItem.status.status == AgendaEnum.DECLINED)
                           Container(
-                            width: MediaQuery.of(context).size.width - 190,
+                            width: MediaQuery.of(context).size.width,
                             child: ButtonComponent.secondaryOutlineButton(
                                 child: Text('Choose another activity'),
                                 onPressed: () {}),
@@ -258,7 +279,7 @@ class _AgendaCard extends StatelessWidget {
             ),
           ),
           Flexible(
-            flex: 7,
+            flex: 3,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.end,
               crossAxisAlignment: CrossAxisAlignment.end,
@@ -304,7 +325,7 @@ class _AgendaCard extends StatelessWidget {
                     ),
                     child: Icon(
                       AtivitiIcons.getDirection,
-                      color: AtivitiColors.white,
+                      color: AtivitiColors.offWhite,
                       size: 18,
                     ),
                   )

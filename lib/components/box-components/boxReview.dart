@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 class BoxReview extends StatefulWidget {
   final String imageUrl;
   final String reviewerName;
-  final double ratingValue;
+  // final double ratingValue;
   final String reviewText;
   final String reviewDate;
   final Function onReportCallback;
@@ -16,7 +16,7 @@ class BoxReview extends StatefulWidget {
     Key key,
     @required this.imageUrl,
     @required this.reviewerName,
-    @required this.ratingValue,
+    // @required this.ratingValue,
     @required this.reviewText,
     @required this.reviewDate,
     @required this.onReportCallback,
@@ -35,9 +35,10 @@ class _BoxReviewState extends State<BoxReview> {
         color: AtivitiColors.white,
         boxShadow: [
           BoxShadow(
-            color: AtivitiColors.brownGrey.withOpacity(0.2),
-            spreadRadius: 2,
-            blurRadius: 1,
+            color: Colors.black.withOpacity(0.14),
+            offset: Offset(0, 2),
+            spreadRadius: 0,
+            blurRadius: 10,
           )
         ],
       ),
@@ -71,21 +72,21 @@ class _BoxReviewState extends State<BoxReview> {
                   )
                 ],
               ),
-              Row(
-                // TODO check the rating value to render the star
-                children: <Widget>[
-                  for (int i = 0; i < widget.ratingValue.round(); i++) ...[
-                    SizedBox(
-                      width: 5,
-                    ),
-                    Icon(
-                      AtivitiIcons.star,
-                      size: 13,
-                      color: AtivitiColors.scarlet,
-                    ),
-                  ]
-                ],
-              ),
+              // Row(
+              //   // TODO check the rating value to render the star
+              //   children: <Widget>[
+              //     for (int i = 0; i < widget.ratingValue.round(); i++) ...[
+              //       SizedBox(
+              //         width: 5,
+              //       ),
+              //       Icon(
+              //         AtivitiIcons.star,
+              //         size: 13,
+              //         color: AtivitiColors.scarlet,
+              //       ),
+              //     ]
+              //   ],
+              // ),
             ],
           ),
           SizedBox(
@@ -94,8 +95,11 @@ class _BoxReviewState extends State<BoxReview> {
           Text(
             widget.reviewText,
             maxLines: 4,
-            style: AtivitiTypography.h4TitleMenuBlack,
+            style: AtivitiTypography.h5Title.copyWith(height: 1.43),
             textAlign: TextAlign.left,
+          ),
+          SizedBox(
+            height: 20,
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,

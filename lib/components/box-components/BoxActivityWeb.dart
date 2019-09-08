@@ -8,7 +8,7 @@ class BoxActivityWeb extends StatelessWidget {
   final String activity;
   final String place;
   final String location;
-  final double rating;
+  // final double rating;
   final String date;
   final String timeFrom;
   final String timeTo;
@@ -24,7 +24,7 @@ class BoxActivityWeb extends StatelessWidget {
     @required this.timeFrom,
     @required this.timeTo,
     @required this.location,
-    @required this.rating,
+    // @required this.rating,
   });
   @override
   Widget build(BuildContext context) {
@@ -34,9 +34,10 @@ class BoxActivityWeb extends StatelessWidget {
         color: AtivitiColors.white,
         boxShadow: [
           BoxShadow(
-            color: AtivitiColors.brownGrey.withOpacity(0.2),
-            spreadRadius: 2,
-            blurRadius: 1,
+            color: AtivitiColors.brownGrey.withOpacity(0.16),
+            spreadRadius: 0,
+            blurRadius: 14,
+            offset: Offset(0, 2),
           )
         ],
       ),
@@ -60,14 +61,15 @@ class BoxActivityWeb extends StatelessWidget {
               children: <Widget>[
                 Text(
                   activity,
-                  style: AtivitiTypography.h4TitleMenuBlack,
+                  style:
+                      AtivitiTypography.h4TitleMenuBlack.copyWith(height: 1.25),
                 ),
                 SizedBox(
                   height: 6,
                 ),
                 Text(
                   place,
-                  style: AtivitiTypography.h6LabelBlack,
+                  style: AtivitiTypography.h6LabelBlack.copyWith(height: 1.33),
                 ),
                 SizedBox(
                   height: 6,
@@ -83,32 +85,33 @@ class BoxActivityWeb extends StatelessWidget {
                     ),
                     Text(
                       location,
-                      style: AtivitiTypography.h6LabelBlack,
+                      style:
+                          AtivitiTypography.h6LabelBlack.copyWith(height: 1.33),
                     )
                   ],
                 ),
                 SizedBox(
                   height: 6,
                 ),
-                Row(
-                  children: <Widget>[
-                    Icon(
-                      // TODO change this icon and convert it to svg
-                      AtivitiIcons.star,
-                      color: AtivitiColors.coralPink,
-                      size: 13,
-                    ),
-                    SizedBox(
-                      width: 5,
-                    ),
-                    Text(
-                      rating.toString(),
-                      style: AtivitiTypography.h6LabelBlack,
-                    )
-                  ],
-                ),
+                // Row(
+                //   children: <Widget>[
+                //     Icon(
+                //       // TODO change this icon and convert it to svg
+                //       AtivitiIcons.star,
+                //       color: AtivitiColors.coralPink,
+                //       size: 13,
+                //     ),
+                //     SizedBox(
+                //       width: 5,
+                //     ),
+                //     Text(
+                //       rating.toString(),
+                //       style: AtivitiTypography.h6LabelBlack,
+                //     )
+                //   ],
+                // ),
                 Container(
-                  margin: EdgeInsets.symmetric(vertical: 9),
+                  margin: EdgeInsets.symmetric(vertical: 4.5),
                   height: 1,
                   color: Color(0xff979797).withOpacity(.2),
                 ),
@@ -118,28 +121,28 @@ class BoxActivityWeb extends StatelessWidget {
                     Text(
                       date,
                       style: AtivitiTypography.h6LabelBlack.copyWith(
-                        color: AtivitiColors.coralPink,
-                      ),
+                          color: AtivitiColors.coralPink, height: 1.9),
                     ),
                     Text(
                       timeFrom + ' - ' + timeTo,
-                      style: AtivitiTypography.h6LabelBlack,
+                      style:
+                          AtivitiTypography.h6LabelBlack.copyWith(height: 1.9),
                     )
                   ],
                 ),
-                if (hasOpenClose)
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: <Widget>[
-                      Text(
-                        '(opens - closes)',
-                        textAlign: TextAlign.right,
-                        style: AtivitiTypography.h6LabelBlack10.copyWith(
-                          height: 1,
-                        ),
+                // if (hasOpenClose)
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: <Widget>[
+                    Text(
+                      hasOpenClose ? '(opens - closes)' : "",
+                      textAlign: TextAlign.right,
+                      style: AtivitiTypography.h6LabelBlack10.copyWith(
+                        height: 1,
                       ),
-                    ],
-                  )
+                    ),
+                  ],
+                ),
               ],
             ),
           )

@@ -27,7 +27,7 @@ class ButtonSecondary extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.symmetric(vertical: 12.0, horizontal: 16),
         child: Row(
-          mainAxisSize: MainAxisSize.min,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             if (icon != null) ...[
               Icon(
@@ -40,6 +40,7 @@ class ButtonSecondary extends StatelessWidget {
             ],
             Text(
               buttonLabel,
+              textAlign: TextAlign.center,
               style: AtivitiTypography.h5TitleBoldWhite
                   .copyWith(color: AtivitiColors.black),
             )

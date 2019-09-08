@@ -18,9 +18,10 @@ class BoxAttendes extends StatelessWidget {
         color: AtivitiColors.white,
         boxShadow: [
           BoxShadow(
-            color: AtivitiColors.brownGrey.withOpacity(0.2),
-            spreadRadius: 2,
-            blurRadius: 1,
+            color: Colors.black.withOpacity(0.14),
+            offset: Offset(0, 2),
+            spreadRadius: 0,
+            blurRadius: 10,
           )
         ],
       ),
@@ -28,6 +29,7 @@ class BoxAttendes extends StatelessWidget {
       // height: 100,
       child: Center(
         child: Column(
+          mainAxisSize: MainAxisSize.min,
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
@@ -41,9 +43,12 @@ class BoxAttendes extends StatelessWidget {
               minRadius: 45 / 2,
               maxRadius: 45 / 2,
             ),
+            SizedBox(
+              height: 6,
+            ),
             Text(
               attendeeName,
-              style: AtivitiTypography.h4TitleMenuBlack,
+              style: AtivitiTypography.h5TitleBold.copyWith(height: 1.43),
             )
           ],
         ),

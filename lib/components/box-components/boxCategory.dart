@@ -67,7 +67,9 @@ class BoxCategory extends StatelessWidget {
                 children: <Widget>[
                   Text(
                     category,
-                    style: AtivitiTypography.h4TitleMenuWhite,
+                    style: AtivitiTypography.h4TitleMenuWhite.copyWith(
+                      height: 1.25,
+                    ),
                   ),
                   SizedBox(
                     height: 5,

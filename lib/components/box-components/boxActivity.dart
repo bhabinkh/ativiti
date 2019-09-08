@@ -9,7 +9,7 @@ class BoxActivity extends StatelessWidget {
   final String place;
   final String asset;
   final String location;
-  final double rating;
+  // final double rating;
   final String description;
 
   BoxActivity(
@@ -18,7 +18,7 @@ class BoxActivity extends StatelessWidget {
       @required this.asset,
       @required this.boxType,
       @required this.location,
-      @required this.rating,
+      // @required this.rating,
       this.description}) {
     if (boxType == BoxType.FULL) {
       assert(description.length != 0);
@@ -33,9 +33,10 @@ class BoxActivity extends StatelessWidget {
         color: AtivitiColors.white,
         boxShadow: [
           BoxShadow(
-            color: AtivitiColors.brownGrey.withOpacity(0.2),
-            spreadRadius: 2,
-            blurRadius: 1,
+            color: AtivitiColors.brownGrey.withOpacity(0.16),
+            spreadRadius: 0,
+            blurRadius: 14,
+            offset: Offset(0, 2),
           )
         ],
       ),
@@ -70,32 +71,33 @@ class BoxActivity extends StatelessWidget {
                   children: <Widget>[
                     Text(
                       activity,
-                      style: AtivitiTypography.h4TitleMenuBlack,
+                      style: AtivitiTypography.h4TitleMenuBlack
+                          .copyWith(height: 1.25),
                     ),
-                    boxType == BoxType.FULL
-                        ? Row(
-                            children: <Widget>[
-                              Icon(
-                                // TODO change this icon and convert it to svg
-                                AtivitiIcons.star,
-                                color: AtivitiColors.coralPink,
-                                size: 13,
-                              ),
-                              SizedBox(
-                                width: 5,
-                              ),
-                              Text(
-                                rating.toString(),
-                                style: AtivitiTypography.h6LabelBlack,
-                              )
-                            ],
-                          )
-                        : Container(),
+                    // boxType == BoxType.FULL
+                    //     ? Row(
+                    //         children: <Widget>[
+                    //           Icon(
+                    //             // TODO change this icon and convert it to svg
+                    //             AtivitiIcons.star,
+                    //             color: AtivitiColors.coralPink,
+                    //             size: 13,
+                    //           ),
+                    //           SizedBox(
+                    //             width: 5,
+                    //           ),
+                    //           Text(
+                    //             rating.toString(),
+                    //             style: AtivitiTypography.h6LabelBlack,
+                    //           )
+                    //         ],
+                    //       )
+                    //     : Container(),
                   ],
                 ),
                 Text(
                   place,
-                  style: AtivitiTypography.h6LabelBlack,
+                  style: AtivitiTypography.h6LabelBlack.copyWith(height: 1.33),
                 ),
                 if (boxType == BoxType.FULL)
                   Text(
@@ -121,32 +123,33 @@ class BoxActivity extends StatelessWidget {
                     ),
                     Text(
                       location,
-                      style: AtivitiTypography.h6LabelBlack,
+                      style:
+                          AtivitiTypography.h6LabelBlack.copyWith(height: 1.33),
                     )
                   ],
                 ),
                 SizedBox(
                   height: 5,
                 ),
-                boxType != BoxType.FULL
-                    ? Row(
-                        children: <Widget>[
-                          Icon(
-                            // TODO change this icon and convert it to svg
-                            AtivitiIcons.star,
-                            color: AtivitiColors.coralPink,
-                            size: 13,
-                          ),
-                          SizedBox(
-                            width: 5,
-                          ),
-                          Text(
-                            rating.toString(),
-                            style: AtivitiTypography.h6LabelBlack,
-                          )
-                        ],
-                      )
-                    : Container(),
+                // boxType != BoxType.FULL
+                //     ? Row(
+                //         children: <Widget>[
+                //           Icon(
+                //             // TODO change this icon and convert it to svg
+                //             AtivitiIcons.star,
+                //             color: AtivitiColors.coralPink,
+                //             size: 13,
+                //           ),
+                //           SizedBox(
+                //             width: 5,
+                //           ),
+                //           Text(
+                //             rating.toString(),
+                //             style: AtivitiTypography.h6LabelBlack,
+                //           )
+                //         ],
+                //       )
+                //     : Container(),
               ],
             ),
           )
