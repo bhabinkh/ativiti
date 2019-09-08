@@ -10,13 +10,14 @@ class MapBox extends StatelessWidget {
   final String place;
   final String location;
   final double rating;
-
+  final BookingType bookingType;
   const MapBox({
     Key key,
     @required this.startTime,
     @required this.endTime,
     @required this.title,
     @required this.place,
+    @required this.bookingType,
     @required this.location,
     @required this.rating,
   }) : super(key: key);
@@ -106,15 +107,68 @@ class MapBox extends StatelessWidget {
           Column(
             mainAxisSize: MainAxisSize.min,
             children: <Widget>[
-              Text(
-                'Direct\nbooking',
-                style: AtivitiTypography.h6LabelBlue.copyWith(height: 1.3),
-                textAlign: TextAlign.right,
-              )
+              if (this.bookingType == BookingType.DIRECT_BOOKING)
+                Text(
+                  'Direct\nbooking',
+                  style: AtivitiTypography.h6LabelBlue.copyWith(
+                    height: 1.9,
+                    color: AtivitiColors.dusk,
+                  ),
+                  textAlign: TextAlign.right,
+                ),
+              if (this.bookingType == BookingType.BOOKING_REQUEST)
+                Text(
+                  'Booking\nrequest',
+                  style: AtivitiTypography.h6LabelBlue.copyWith(
+                    height: 1.9,
+                    color: AtivitiColors.dusk,
+                  ),
+                  textAlign: TextAlign.right,
+                ),
+              if (this.bookingType == BookingType.BOOKED)
+                Row(
+                  children: <Widget>[
+                    // TODO ADD CHECK ICON HERE
+                    Text(
+                      'Booked',
+                      style: AtivitiTypography.h6LabelBlue.copyWith(
+                        height: 1.9,
+                        color: Color(0xff28aa08),
+                      ),
+                      textAlign: TextAlign.right,
+                    ),
+                  ],
+                ),
+              if (this.bookingType == BookingType.WAITING_LIST)
+                Text(
+                  'Waiting\nlist',
+                  style: AtivitiTypography.h6LabelBlue.copyWith(
+                    height: 1.9,
+                    color: AtivitiColors.tangerine,
+                  ),
+                  textAlign: TextAlign.right,
+                ),
+              if (this.bookingType == BookingType.FULL)
+                Text(
+                  'Full',
+                  style: AtivitiTypography.h6LabelBlue.copyWith(
+                    height: 1.9,
+                    color: AtivitiColors.coralPink,
+                  ),
+                  textAlign: TextAlign.right,
+                ),
             ],
           )
         ],
       ),
     );
   }
+}
+
+enum BookingType {
+  BOOKING_REQUEST,
+  DIRECT_BOOKING,
+  BOOKED,
+  WAITING_LIST,
+  FULL,
 }
