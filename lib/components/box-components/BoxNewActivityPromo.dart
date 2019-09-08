@@ -23,9 +23,10 @@ class BoxNewActivityPromo extends StatelessWidget {
         borderRadius: BorderRadius.circular(8),
         boxShadow: [
           BoxShadow(
-            color: AtivitiColors.brownGrey.withOpacity(0.06),
-            spreadRadius: 2,
-            blurRadius: 1,
+            color: AtivitiColors.brownGrey.withOpacity(0.16),
+            spreadRadius: 0,
+            blurRadius: 14,
+            offset: Offset(0, 2),
           )
         ],
         color: AtivitiColors.white,
@@ -52,7 +53,8 @@ class BoxNewActivityPromo extends StatelessWidget {
               children: <Widget>[
                 Text(
                   promotionName,
-                  style: AtivitiTypography.h4TitleMenuBlack,
+                  style:
+                      AtivitiTypography.h4TitleMenuBlack.copyWith(height: 1.25),
                 ),
                 RichText(
                   text: TextSpan(
@@ -88,7 +90,7 @@ class BoxNewActivityPromo extends StatelessWidget {
                   padding: const EdgeInsets.only(bottom: 11.0),
                   child: Text(
                     description,
-                    style: AtivitiTypography.h6LabelGrey,
+                    style: AtivitiTypography.h6LabelGrey.copyWith(height: 1.58),
                   ),
                 )
               ],

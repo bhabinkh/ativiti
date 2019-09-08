@@ -14,8 +14,8 @@ class BoxLocation extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      // width: 200,
-      // height: 100,
+      width: 200,
+      height: 100,
       child: Stack(
         children: <Widget>[
           Container(
@@ -44,7 +44,7 @@ class BoxLocation extends StatelessWidget {
             left: 14,
             child: Text(
               this.location,
-              style: AtivitiTypography.h4TitleMenuWhite,
+              style: AtivitiTypography.h4TitleMenuWhite.copyWith(height: 1.25),
             ),
           )
         ],

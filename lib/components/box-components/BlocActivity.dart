@@ -9,8 +9,8 @@ class BlocActivity extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 109,
-      width: 149,
+      // height: 109,
+      // width: 149,
       decoration: BoxDecoration(
         color: AtivitiColors.white,
         border: Border.all(

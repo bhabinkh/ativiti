@@ -35,9 +35,10 @@ class BoxNewActivity extends StatelessWidget {
         color: AtivitiColors.white,
         boxShadow: [
           BoxShadow(
-            color: AtivitiColors.brownGrey.withOpacity(0.2),
-            spreadRadius: 2,
-            blurRadius: 1,
+            color: AtivitiColors.brownGrey.withOpacity(0.16),
+            spreadRadius: 0,
+            blurRadius: 14,
+            offset: Offset(0, 2),
           )
         ],
       ),
@@ -64,14 +65,16 @@ class BoxNewActivity extends StatelessWidget {
                 children: <Widget>[
                   Text(
                     activityName,
-                    style: AtivitiTypography.h4TitleMenuBlack,
+                    style: AtivitiTypography.h4TitleMenuBlack
+                        .copyWith(height: 1.25),
                   ),
                   Text(
                     place,
-                    style: AtivitiTypography.h6LabelBlack,
+                    style:
+                        AtivitiTypography.h6LabelBlack.copyWith(height: 1.33),
                   ),
                   SizedBox(
-                    height: 12,
+                    height: 8,
                   ),
                   type == ActivityType.AVAILABLE_SOON
                       ? Column(
@@ -79,12 +82,13 @@ class BoxNewActivity extends StatelessWidget {
                           children: <Widget>[
                             Text(
                               'Available Soon',
-                              style: AtivitiTypography.h6LabelBlack
-                                  .copyWith(color: AtivitiColors.coralPink),
+                              style: AtivitiTypography.h6LabelBlack.copyWith(
+                                  color: AtivitiColors.coralPink, height: 1.58),
                             ),
                             Text(
                               date,
-                              style: AtivitiTypography.h6LabelGrey,
+                              style: AtivitiTypography.h6LabelGrey
+                                  .copyWith(height: 1.58),
                             )
                           ],
                         )
@@ -113,7 +117,8 @@ class BoxNewActivity extends StatelessWidget {
                       ),
                       Text(
                         location,
-                        style: AtivitiTypography.h6LabelBlack,
+                        style: AtivitiTypography.h6LabelBlack
+                            .copyWith(height: 1.33),
                       )
                     ],
                   )
